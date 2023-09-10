@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
-import styles  from "./header.module.css";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className={styles.header}>
-      <Link className={styles.link} to="/">
-        <img className={styles.img} src="/logo.svg" alt="logo du site kasa" />
+    <header>
+      <Link className="header__link" to="/">
+        <img className="header__img" src="/logo.svg" alt="logo du site kasa" />
       </Link>
       <nav>
-        <ul className={styles.nav}>
+        <ul className="header__nav">
           <li>
-            <Link className={styles.link} to="/">
+            <NavLink className="header__link" to="/">
               Accueil
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link className={styles.link} to="/about">
+            <NavLink className="header__link" to="/about">
               A propos
-            </Link>
+            </NavLink>
           </li>
         </ul>
       </nav>

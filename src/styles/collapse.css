@@ -1,0 +1,35 @@
+.collapse {
+  display: flex;
+  flex-direction: column;
+  background: var(--secondary-color);
+  border-radius: 5px;
+}
+
+.collapse__button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  background: var(--primary-color);
+  border-radius: 10px;
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 500;
+  border: none;
+  padding: 1.3rem 2rem;
+}
+
+.collapse__icon {
+  width: 24px;
+  height: 24px;
+  object-fit: cover;
+}
+
+.collapse__icon--open {
+  transform: rotate(180deg);
+}
+
+.collapse--open {
+  margin-top: 0.8rem;
+  padding: 1.8rem;
+}
