@@ -6,7 +6,6 @@ import { Host } from "../components/Property/Host";
 import { PersonalInfo } from "../components/Property/PersonalInfo";
 import { Carousel } from "../components/ui/Carousel";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
 
 const Property = () => {
   const { data, loading, error } = useFetchData();
@@ -15,17 +14,15 @@ const Property = () => {
 
   const property = data && data.find((property) => property.id === id);
 
-  useEffect(() => {
-    if (!property)
-      return (
-        <div className="property">
-          <p className="property">identifiant {id} de ce bien n'existe pas</p>
-          <button className="bag" onClick={() => navigate("/")}>
-            Retour
-          </button>
-        </div>
-      );
-  }, [navigate]);
+  if (!property)
+    return (
+      <div className="property">
+        <p className="property">identifiant {id} de ce bien n'existe pas</p>
+        <button className="bag" onClick={() => navigate("/")}>
+          Retour
+        </button>
+      </div>
+    );
 
   if (loading)
     return (
