@@ -16,7 +16,7 @@ const Router = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route
-            index
+            exact
             element={
               <Suspense fallback={<Spinner />}>
                 <Home />
