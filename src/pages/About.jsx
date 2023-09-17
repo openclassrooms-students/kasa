@@ -9,8 +9,8 @@ const About = () => {
       <Banner background={bannerAbout} />
 
       <div className="about-collapse-container">
-        {DATA.map(({ title, content }) => (
-          <Collapse title={title}>
+        {DATA.map(({ title, content }, index) => (
+          <Collapse key={index} title={title}>
             <p>{content}</p>
           </Collapse>
         ))}

@@ -8,10 +8,11 @@ import NotFound from "../pages/NotFound";
 import Layout from "../components/layout/Layout";
 import { Suspense } from "react";
 import Spinner from "../components/ui/Spinner";
+import { BrowserRouter } from "react-router-dom";
 
 const Router = () => {
   return (
-    <HashRouter>
+    <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route
@@ -41,7 +42,7 @@ const Router = () => {
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
-    </HashRouter>
+    </BrowserRouter>
   );
 };
 

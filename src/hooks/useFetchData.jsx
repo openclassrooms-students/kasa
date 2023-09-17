@@ -8,12 +8,13 @@ const useFetchData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("data/data.json");
+        const response = await fetch("/data/data.json");
 
         if (!response.ok) {
-          throw new Error("Réponse réseau non OK");
+          throw new Error(
+            `HTTP error! status: ${response.status} impoosible de charger les données`
+          );
         }
-
         const jsonData = await response.json();
         setData(jsonData);
         setLoading(false);
@@ -26,13 +27,12 @@ const useFetchData = () => {
     fetchData();
   }, []);
 
-  // Utilisez useMemo pour renvoyer une valeur stable incluant les données, le chargement et l'erreur
   const value = useMemo(
     () => ({ data, loading, error }),
     [data, loading, error]
   );
 
   return value;
-}
+};
 
 export default useFetchData;

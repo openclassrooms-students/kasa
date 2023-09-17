@@ -1,10 +1,10 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useFetchData from "../hooks/useFetchData";
-import Slider from "../components/ui/Slider";
 import Collapses from "../components/Property/Collapses";
 import { Host } from "../components/Property/Host";
 import { PersonalInfo } from "../components/Property/PersonalInfo";
+import { Carousel } from "../components/ui/Carousel";
 
 const Property = () => {
   const { data, loading, error } = useFetchData();
@@ -20,7 +20,7 @@ const Property = () => {
   if (error) return <p>Erreur : {error.message}</p>;
   return (
     <div>
-      <Slider slides={property?.pictures} />
+      <Carousel images={property?.pictures} />
       <div className="property__info">
         <Host {...property} />
         <PersonalInfo {...property} />
