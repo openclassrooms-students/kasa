@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react";
 
-function useFetchData(filePath) {
+const useFetchData = () => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -8,7 +8,7 @@ function useFetchData(filePath) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(filePath);
+        const response = await fetch("data/data.json");
 
         if (!response.ok) {
           throw new Error("Réponse réseau non OK");
@@ -24,7 +24,7 @@ function useFetchData(filePath) {
     };
 
     fetchData();
-  }, [filePath]);
+  }, []);
 
   // Utilisez useMemo pour renvoyer une valeur stable incluant les données, le chargement et l'erreur
   const value = useMemo(

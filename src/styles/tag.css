@@ -1,0 +1,27 @@
+.bag {
+  min-width: 84px;
+  height: 18px;
+  padding: 0 1rem;
+  border-radius: 5px;
+  background: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  font-size: 1rem;
+  border: none;
+}
+
+.bag__container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+@media screen and (min-width: 1240px) {
+  .bag {
+    min-width: 115px;
+    height: 25px;
+    font-size: 1.4rem;
+    border-radius: 10px;
+     padding: 0 1.5rem;
+  }
+}

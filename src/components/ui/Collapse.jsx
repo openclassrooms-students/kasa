@@ -1,5 +1,4 @@
 import { useState } from "react";
-import chevronDown from "../../assets/chevron-down.svg";
 
 const Collapse = ({ title, children }) => {
   const [open, setOPen] = useState(false);
@@ -10,12 +9,7 @@ const Collapse = ({ title, children }) => {
     <div className="collapse">
       <button className="collapse__button" onClick={toggle}>
         {title}
-
-        <img
-          className={`collapse__icon ${open && "collapse__icon--open"}`}
-          src={chevronDown}
-          alt="chevron"
-        />
+        {open ? <i className="fa-solid fa-chevron-up"></i> : <i className="fa-solid fa-chevron-down"></i>}
       </button>
       {open && <div className="collapse--open">{children}</div>}
     </div>
